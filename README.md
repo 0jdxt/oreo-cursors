@@ -1,4 +1,4 @@
-# Oreo Cursors
+# Oreo Nord Cursors
 
 ### Install build version
 
