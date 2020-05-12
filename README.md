@@ -18,6 +18,7 @@ https://www.pling.com/p/1360254/
     ```
     git clone https://github.com/0jdxt/oreo-cursors.git
     cd oreo-cursors
+    ./generate_colours.py
     make build
     sudo make install
     ```
