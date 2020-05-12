@@ -16,7 +16,7 @@ https://www.pling.com/p/1360254/
 2. Run the following commands as normal user:
 
     ```
-    git clone https://github.com/varlesh/oreo-cursors.git
+    git clone https://github.com/0jdxt/oreo-cursors.git
     cd oreo-cursors
     make build
     sudo make install
