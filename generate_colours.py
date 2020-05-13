@@ -39,5 +39,5 @@ for (color, hex_val) in colors.items():
 
         # update cursor title
         with open(os.path.join(COLOR_DIR, "index.theme"), "w") as f:
-            NAME = " ".join([x.capitalize() for x in color.split("_")])
+            NAME = " ".join(x.capitalize() for x in color.split("_"))
             f.write("[Icon Theme]\nName=Oreo " + NAME + " Cursors\nComment=design by varlesh")
