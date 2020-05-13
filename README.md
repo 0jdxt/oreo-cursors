@@ -8,7 +8,7 @@ Removed original colours and refactored to use a base directory allowing any col
 
 ### Arch/Manjaro
 ```bash
-    yay -S oreo-nord-colors-git
+    yay -S oreo-nord-cursors-git
 ```
 
 ### Manual Install
