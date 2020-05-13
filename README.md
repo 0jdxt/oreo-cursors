@@ -13,7 +13,7 @@ This is my fork of [varlesh/oreo-cursors](https://github.com/varlesh/oreo-cursor
     - make
     - inkscape
     - xcursorgen
-    - python
+    - python 3
 
 2. Run the following commands as normal user:
 ```bash
