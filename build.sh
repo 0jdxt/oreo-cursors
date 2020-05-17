@@ -84,6 +84,8 @@ SCRIPT_DIR="$(dirname "$0")"
 : "${ALIASES:="$SCRIPT_DIR"/src/cursorList}"
 : "${CONFIG_DIR:="$SCRIPT_DIR"/src/config}"
 
+bash generate.sh
+
 for theme_src_dir in "$SRC_DIR"/*; do
 	# skip directory that not contains index.theme file
 	[ -f "$theme_src_dir/index.theme" ] || continue

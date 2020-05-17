@@ -7,7 +7,7 @@ build:
 	bash build.sh
 
 clean:
-	-rm -rf build/ dist/ *.tar.gz
+	-rm -rf build/ dist/ *.tar.gz src/oreo*
 
 install:
 	mkdir -p $(DESTDIR)$(PREFIX)/share/icons
