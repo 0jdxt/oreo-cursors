@@ -24,7 +24,7 @@ BASE_DIR="oreo_base"
 base_mtime=$(stat -c '%Y' "$BASE_DIR")
 for color in "${!colors[@]}"; do
     COLOR_DIR="src/oreo_nord_${color}_cursors"
-    color_mtime=$(stat -c '%Y' "$COLOR_DIR" 2>/dev/null)
+    color_mtime=$(stat -c '%Y' "$COLOR_DIR" 2>/dev/null || echo 0)
 
     # if oreo_base hasnt changed, only generate if folder non existant
     if ((color_mtime > base_mtime)) && [ -d "$COLOR_DIR" ]; then
