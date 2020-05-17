@@ -34,30 +34,28 @@ for color in "${!colors[@]}"; do
     rm -rf "$COLOR_DIR"
     mkdir "$COLOR_DIR"
 
+    hex="${colors[$color]}"
+    # dark highlight for snow, else light
+    case $color in
+        snow*) re_white=${colors[night_4]};;
+        *) re_white=${colors[snow_1]};;
+    esac
+
     echo "Generating $color..."
     for orig_path in "$BASE_DIR"/*; do
         file=$(basename "$orig_path")
         new_path="$COLOR_DIR/$file"
 
-        # dark highlight for snow, else light
-        case $color in
-            snow*) re_white=${colors[night_4]};;
-            *) re_white=${colors[snow_3]};;
-        esac
-
-        sed "s/#4e81ed/${colors[color]}/g; s/#000000/$re_white/g; s/#ffffff/${colors[night_1]}/g" <"$orig_path" >"$new_path"
+        sed "s/#4e81ed/$hex/g; s/#000000/$re_white/g; s/#ffffff/${re_white}/g" <"$orig_path" >"$new_path"
     done
 
     name="${color/_/ }"
 
-    theme_file="$(cat <<-EOF
+    cat <<-EOF > "$COLOR_DIR/index.theme"
 	[Icon Theme]
 	Name=Oreo Nord ${name[*]^} Cursors
 	Comment=design by varlesh
 	EOF
-    )"
-
-    echo "$theme_file" > "$COLOR_DIR/index.theme"
 done
 
 echo "Ready to build!"
