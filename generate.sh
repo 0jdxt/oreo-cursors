@@ -2,22 +2,14 @@
 # Generate oreo cursors, just changing colours
 
 declare -A colors=(
-    [night_1]="#2E3440"
-    [night_2]="#3B4252"
-    [night_3]="#434C5E"
-    [night_4]="#4C566A"
-    [snow_1]="#D8DEE9"
-    [snow_2]="#E5E9F0"
-    [snow_3]="#ECEFF4"
-    [frost_1]="#8FBCBB"
-    [frost_2]="#88C0D0"
-    [frost_3]="#81A1C1"
-    [frost_4]="#5E81AC"
-    [red]="#BF616A"
-    [orange]="#D08770"
-    [yellow]="#EBCB8B"
-    [green]="#A3BE8C"
-    [purple]="#B48EAD"
+    # night
+    [night_1]="#2E3440" [night_2]="#3B4252" [night_3]="#434C5E" [night_4]="#4C566A"
+    # snow
+    [snow_1]="#D8DEE9" [snow_2]="#E5E9F0" [snow_3]="#ECEFF4"
+    # frost
+    [frost_1]="#8FBCBB" [frost_2]="#88C0D0" [frost_3]="#81A1C1" [frost_4]="#5E81AC"
+    # aurora
+    [red]="#BF616A" [orange]="#D08770" [yellow]="#EBCB8B" [green]="#A3BE8C" [purple]="#B48EAD"
 )
 
 BASE_DIR="oreo_base"
@@ -34,11 +26,13 @@ for color in "${!colors[@]}"; do
     rm -rf "$COLOR_DIR"
     mkdir "$COLOR_DIR"
 
+    name="${color/_/ }"
     hex="${colors[$color]}"
+
     # dark highlight for snow, else light
     case $color in
         snow*) re_white=${colors[night_4]};;
-        *) re_white=${colors[snow_1]};;
+        *)     re_white=${colors[snow_1]};;
     esac
 
     echo "Generating $color..."
@@ -49,14 +43,10 @@ for color in "${!colors[@]}"; do
         sed "s/#4e81ed/$hex/g; s/#000000/$re_white/g; s/#ffffff/${re_white}/g" <"$orig_path" >"$new_path"
     done
 
-    name="${color/_/ }"
-
     cat <<-EOF > "$COLOR_DIR/index.theme"
 	[Icon Theme]
 	Name=Oreo Nord ${name[*]^} Cursors
 	Comment=design by varlesh
 	EOF
 done
-
-echo "Ready to build!"
 
