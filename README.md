@@ -4,7 +4,7 @@ This is my fork of [varlesh/oreo-cursors](https://github.com/varlesh/oreo-cursor
 
 ### Arch (AUR)
 ```bash
-    yay -S oreo-nord-cursors-git
+yay -S oreo-nord-cursors-git
 ```
 
 ### Manual Install
@@ -16,10 +16,10 @@ This is my fork of [varlesh/oreo-cursors](https://github.com/varlesh/oreo-cursor
 
 2. Run the following commands as normal user:
 ```bash
-    git clone https://github.com/0jdxt/oreo-nord-cursors.git
-    cd oreo-nord-cursors
-    make build
-    sudo make install
+git clone https://github.com/0jdxt/oreo-nord-cursors.git
+cd oreo-nord-cursors
+make build
+sudo make install
 ```
 
 3. Choose a theme in the Settings or in the Tweaks tool.
