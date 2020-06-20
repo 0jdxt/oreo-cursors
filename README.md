@@ -3,7 +3,7 @@
 This is my fork of [varlesh/oreo-cursors](https://github.com/varlesh/oreo-cursors), with [Nord](https://nordtheme.com) colours.
 
 ### Arch (AUR)
-```bash
+```console
 yay -S oreo-nord-cursors-git
 ```
 
@@ -15,7 +15,7 @@ yay -S oreo-nord-cursors-git
     - xcursorgen
 
 2. Run the following commands as normal user:
-```bash
+```console
 git clone https://github.com/0jdxt/oreo-nord-cursors.git
 cd oreo-nord-cursors
 make build
