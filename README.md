@@ -4,7 +4,7 @@ This is my fork of [varlesh/oreo-cursors](https://github.com/varlesh/oreo-cursor
 
 ### Arch (AUR)
 ```console
-yay -S oreo-nord-cursors-git
+paru -S oreo-nord-cursors-git
 ```
 
 ### Manual Install
